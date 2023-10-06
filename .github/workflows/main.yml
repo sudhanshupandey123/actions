@@ -16,6 +16,5 @@ jobs:
      - name: Run tests
        run: |
         python p1.py
-    publish:
-      needs: build
+    
      
