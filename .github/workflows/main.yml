@@ -4,11 +4,18 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
      - uses: actions/checkout@v3
+     - name: Grant Permission
+       run: chmod +x gradlew
      - name: Run tests
        run: |
         python p1.py
+    publish:
+      needs: build
      
