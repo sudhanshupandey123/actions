@@ -9,8 +9,6 @@ jobs:
 
     steps:
      - uses: actions/checkout@v3
-     - name: Grant Permission
-       run: chmod +x gradlew
      - name: Run tests
        run: |
         python p1.py
